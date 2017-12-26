@@ -1,15 +1,18 @@
 $(document).ready(function() {
+  var stopTimer;
   var splash = $('#splash');
   var searchBar = $('#search-bar');
 
-  splash.fadeIn('fast');
-
-  setTimeout(fadeSplash, 2000);
+  fadeSplash();
   searchBar.keyup(searchFilter);
 
   function fadeSplash() {
-    splash.fadeOut();
-    window.location.replace = '../views/home.html';
+    if (window.location.href === 'https://andrea-isabel.github.io/foodmap/index.html') {
+      setTimeout(function() {
+        splash.fadeOut();
+        window.location.replace('./views/home.html');
+      }, 2000);
+    }
   }
 
   function searchFilter(event) {
