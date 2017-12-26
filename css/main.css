@@ -1,4 +1,61 @@
-.bg-home {
-  height: 100vh;
-  background: linear-gradient(#A8F9FF , #9AE5E6);
+/* Site styles */
+* {
+  font-family: 'Raleway', sans-serif;
 }
+
+.bg-color {
+  background: linear-gradient(to bottom, #fff, #b8faff);
+  min-height: 100vh;
+}
+
+/* Overwrite styles */
+.form-group input {
+  border: none;
+  border-radius: 25px;
+  box-shadow: 2px 4px 6px 2px  rgba(164, 232, 236, 0.15);
+}
+
+/* Splash screen */
+#splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../assets/images/splash-bg.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.splash-content {
+  width: 60%;
+}
+
+.foodmap-brand {
+  font-weight: 700;
+  color: #e55934;
+}
+
+.splash-logo {
+  width: 100%;
+}
+
+/* Header styles */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+header p {
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+/* Map styles */
+#map iframe {
+  height: 40vh;
+  width: 100%;
+  margin: 25px auto;
+}
+
+/* Search filter styles */
