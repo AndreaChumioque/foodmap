@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   function fadeSplash() {
     splash.fadeOut();
-    window.location.href = '../views/home.html';
+    window.location.replace = '../views/home.html';
   }
 
   function searchFilter(event) {
