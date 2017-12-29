@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   // Splash que redirecciona a home
   function fadeSplash() {
-    if (window.location.href === 'file:///D:/Andrea/Laboratoria/Sprint3/Retos%203/foodmap/index.html') {
+    if (window.location.href === 'https://andrea-isabel.github.io/foodmap/') {
       setTimeout(function() {
         $('body').fadeOut(1000, function() {
           window.location.href = './views/home.html';
