@@ -17,42 +17,46 @@
   </header>
   <main>
     <!-- Google maps -->
-    <section id="map" class="container-fluid">
+    <!-- <section id="map" class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
           <iframe
-          frameborder="0" style="border:0"
+          frameborder="0"
           src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCT2GpxF7X_3dlLQVdNOqmzlHBaJVHXwwA&q=restaurants+in+Miraflores">
           </iframe>
         </div>
       </div>
-    </section>
+    </section> -->
 
+    <!-- Filtros -->
     <section id="filter" class="container-fluid">
+      <h3 class="h3 text-center">Comida cerca de ti</h3>
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" id="search-bar" class="form-control" placeholder="Search">
+          <input type="text" id="search-bar" class="form-control" placeholder="¿Qué quieres comer hoy?">
+        </div>
+        <div class="form-group">
+          <select name="location" id="location" class="form-control">
+            <option value="">Todos los distritos</option>
+            <option value="Miraflores">Miraflores</option>
+            <option value="Surco">Surco</option>
+            <option value="Surquillo">San Isidro</option>
+            <option value="San Borja">San Borja</option>
+            <option value="Barranco">Barranco</option>
+          </select>
         </div>
       </form>
     </section>
 
+    <!-- Resultados -->
     <section id="results" class="container-fluid">
       <div class="row">
-        <ul>
-          <li class="collection">hola</li>
-          <li class="collection">como</li>
-          <li class="collection">estas</li>
-          <li class="collection">elena</li>
-          <li class="collection">mama</li>
-          <li class="collection">imouto</li>
-          <li class="collection">papi</li>
-          <li class="collection">sirito</li>
-          <li class="collection">sirius</li>
-          <li class="collection">hola</li>
-          <li class="collection">hola</li>
-          <li class="collection">hola</li>
-          <li class="collection">hola</li>
-          <li class="collection">hola</li>
+        <ul class="list-unstyled clearfix">
+            <li class="collection col-xs-6">
+              <a id="demo" href="#">
+                <span class="hover"></span>
+              </a>
+            </li>
         </ul>
       </div>
     </section>
@@ -61,6 +65,7 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
   <script type="text/javascript" src="../js/app.js"></script>
 </body>
 

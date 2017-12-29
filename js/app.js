@@ -1,24 +1,37 @@
 $(document).ready(function() {
-  var stopTimer;
-  var splash = $('#splash');
   var searchBar = $('#search-bar');
+  var restaurants = Object.keys(data);
 
   fadeSplash();
+  displayRestaurants();
   searchBar.keyup(searchFilter);
 
+  // Splash que redirecciona a home
   function fadeSplash() {
-    if (window.location.href === 'https://andrea-isabel.github.io/foodmap/') {
+    if (window.location.href === 'file:///D:/Andrea/Laboratoria/Sprint3/Retos%203/foodmap/index.html') {
       setTimeout(function() {
-        splash.fadeOut();
-        window.location.href = './views/home.html';
+        $('body').fadeOut(1000, function() {
+          window.location.href = './views/home.html';
+        });
       }, 2000);
     }
   }
 
+  // Cargando restaurantes según data
+  function displayRestaurants() {
+    $.each(restaurants, function(i) {
+      var restThumb = '<li class="collection col-xs-6"><a id=' + restaurants[i] + ' href="#"></a></li>';
+      $('#results .row ul').append(restThumb);
+      $('#' + restaurants[i]).css({
+        'background-image': 'url(' + data[restaurants[i]].image + ')'});
+    });
+  }
+
+  // Filtro de restaurantes
   function searchFilter(event) {
     var searchWords = searchBar.val();
     $('.collection').hide();
-    $('.collection li').each(function() {
+    $('.collection').each(function() {
       var match = $(this).text();
       if (match.indexOf(searchWords) !== -1) {
         $(this).fadeIn('fast');
