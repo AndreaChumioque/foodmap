@@ -89,18 +89,26 @@ header p {
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  transition: .25s;
   background-image: url('../assets/images/comma.jpg');
 }
 
-.hover {
+.caption {
   position: absolute;
+  display: flex;
   height: 100%;
   width: 100%;
-  background-color: aquamarine;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255, 175, 174, 0.9);
   opacity: 0;
+  transition: .4s;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  color: #fff;
+  font-size: 1.25em;
 }
 
-.hover:hover {
-  opacity: .9;
+.caption img {
+  width: 30%;
 }

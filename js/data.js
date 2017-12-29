@@ -8,7 +8,7 @@ var data = {
 
   PUNTOAZUL: {
     name: 'Punto Azul',
-    food: ['ceviche', 'comida criolla', 'mariscos'],
+    food: ['ceviche', 'comida criolla', 'arroz con mariscos'],
     location: ['Miraflores', 'Surco'],
     image: '../assets/images/puntoazul.jpg'
   },
