@@ -7,7 +7,7 @@ $(document).ready(function() {
   searchBar.keyup(searchFilter);
 
   function fadeSplash() {
-    if (window.location.href === 'https://andrea-isabel.github.io/foodmap/index.html') {
+    if (window.location.href === 'https://andrea-isabel.github.io/foodmap/') {
       setTimeout(function() {
         splash.fadeOut();
         window.location.replace('./views/home.html');
