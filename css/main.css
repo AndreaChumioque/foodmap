@@ -1,6 +1,8 @@
 /* Site styles */
 :root {
   --foodmap-red: #e55934;
+  --foodmap-red-hover: #ad3210;
+  --foodmap-orange: #fbb041;
 }
 
 * {
@@ -12,11 +14,29 @@
   min-height: 100vh;
 }
 
+iframe {
+  width: 100%;
+  margin: 25px auto;
+  border: 0;
+}
+
 /* Overwrite styles */
 .form-group input, .form-group select {
   border: none;
   border-radius: 25px;
   box-shadow: 2px 4px 6px 2px  rgba(164, 232, 236, 0.15);
+}
+
+.btn-default {
+  background-color: var(--foodmap-red);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+}
+
+.btn-default:hover {
+  background-color: var(--foodmap-red-hover);
+  color: #fff;
 }
 
 /* Splash screen */
@@ -36,13 +56,17 @@
   color: var(--foodmap-red);
 }
 
+.foodmap-title {
+  font-weight: 700;
+  color: var(--foodmap-orange);
+}
+
 .splash-logo {
   width: 100%;
 }
 
 /* Header styles */
 header {
-  /* background-color: #fff; */
   background-image: url('../assets/images/splash-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,9 +81,6 @@ header p {
 /* Map styles */
 #map iframe {
   height: 40vh;
-  width: 100%;
-  margin: 25px auto;
-  border: 0;
 }
 
 /* Search results styles */
@@ -81,17 +102,6 @@ header p {
   position: relative;
 }
 
-#demo {
-  box-shadow: 2px 4px 6px 2px  rgba(87, 158, 161, 0.3);
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  background-image: url('../assets/images/comma.jpg');
-}
-
 .caption {
   position: absolute;
   display: flex;
@@ -111,4 +121,18 @@ header p {
 
 .caption img {
   width: 30%;
+}
+
+/* Modal styles */
+.modal-content {
+  border-radius: 20px;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.modal-body iframe {
+  height: 30vh;
+  margin-top: 0;
 }
