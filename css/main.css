@@ -3,6 +3,7 @@
   --foodmap-red: #e55934;
   --foodmap-red-hover: #ad3210;
   --foodmap-orange: #fbb041;
+  --foodmap-blue: #0cb8bd;
 }
 
 * {
@@ -54,6 +55,11 @@ iframe {
 .foodmap-brand {
   font-weight: 700;
   color: var(--foodmap-red);
+}
+
+.foodmap-main {
+  font-weight: 700;
+  color: var(--foodmap-blue);
 }
 
 .foodmap-title {
@@ -121,6 +127,7 @@ header p {
 
 .caption img {
   width: 30%;
+  max-width: 75px;
 }
 
 /* Modal styles */
@@ -135,4 +142,14 @@ header p {
 .modal-body iframe {
   height: 30vh;
   margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar-form {
+    width: 50%;
+  }
+  
+  .navbar-form .form-group, .navbar-form .form-control {
+    width: 100%;
+  }
 }
