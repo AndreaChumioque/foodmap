@@ -62,11 +62,4 @@ $(document).ready(function() {
     $('.address').text(data[$(this).parent().attr('id')].address);
     $('.price').text(data[$(this).parent().attr('id')].price);
   }
-
-  // Resetear serachbar
-  function cleanSearch() {
-    if ($('#infoModal').is(':hidden')) {
-      searchBar.val('');
-    }
-  }
 });
