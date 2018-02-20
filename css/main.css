@@ -15,10 +15,9 @@
   min-height: 100vh;
 }
 
-iframe {
-  width: 100%;
-  margin: 25px auto;
-  border: 0;
+#map {
+  margin-top: 25px;
+  height: 40vh;
 }
 
 /* Overwrite styles */
@@ -85,14 +84,20 @@ header p {
 }
 
 /* Map styles */
-#map iframe {
+iframe {
+  width: 100%;
+  margin: 25px auto;
+  border: 0;
+}
+
+#map {
   height: 40vh;
 }
 
 /* Search results styles */
 .collection {
   display: block;
-  height: 25vh;
+  height: 30vh;
   padding: 10px;
 }
 

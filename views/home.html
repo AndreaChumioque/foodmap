@@ -17,11 +17,10 @@
   </header>
   <main>
     <!-- Google maps -->
-    <section id="map" class="container-fluid">
+    <section class="container-fluid">
       <div class="row">
-        <div class="col-xs-12">
-          <iframe frameborder="0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCT2GpxF7X_3dlLQVdNOqmzlHBaJVHXwwA&q=restaurants+in+Miraflores">
-          </iframe>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div id="map"></div>
         </div>
       </div>
     </section>
@@ -29,7 +28,7 @@
     <!-- Filtros -->
     <section id="filter" class="container-fluid">
       <h3 class="h3 text-center foodmap-main">Comida cerca de ti</h3>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form center-block">
         <!-- Filtro por plato -->
         <div class="form-group">
           <input type="text" id="search-bar" class="form-control" placeholder="¿Qué quieres comer hoy?">
@@ -40,7 +39,7 @@
     <!-- Resultados -->
     <section id="results" class="container-fluid">
       <div class="row">
-        <ul class="list-unstyled clearfix">
+        <ul class="list-unstyled col-xs-12 col-sm-10 col-sm-offset-1">
         </ul>
       </div>
     </section>
@@ -50,7 +49,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <h4 class="modal-title foodmap-brand text-center" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body clearfix">
@@ -77,6 +78,8 @@
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/data.js"></script>
   <script type="text/javascript" src="../js/app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbmsAZXjP-dzWaO0vNueVnIfRPDtgj9Pk&libraries=places&callback=initMap" async
+    defer></script>
 </body>
 
 </html>
