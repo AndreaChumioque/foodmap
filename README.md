@@ -2,14 +2,13 @@
 
 Foodmap es un aplicativo que localiza los restaurantes cercanos y los muestra en Google Maps. Además cuenta con una data local de restaurantes con información relevante como dirección, precios y comida que ofrece.
 
-![](https://fotos.subefotos.com/b07abe06869985a51231621065b1e11ao.png
-)
+![Foodmap](https://fotos.subefotos.com/b07abe06869985a51231621065b1e11ao.png)
 
-## Desarrollo
+## Desarrollado para [Laboratoria](http://laboratoria.la) 
 
 El objetivo de este reto es desarrollar una web-app que contenga un filtro para restaurantes.
 
-La aplicación fue desarrollada utilizando una data para la información de los restaurantes, Bootrstrap y jQuery.
+La aplicación fue desarrollada utilizando una data para la información de los restaurantes, Bootstrap 3 y jQuery.
 
 ## Flujo de aplicación
 
