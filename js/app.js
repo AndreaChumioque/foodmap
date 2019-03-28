@@ -1,5 +1,6 @@
 var map;
 var infowindow;
+var API_KEY = 'AIzaSyBhRiTqDw5gWOpEZU3xrQs5NvM0pfct6Wk';
 
 function initMap() {
   // Try HTML5 geolocation.
@@ -35,18 +36,26 @@ function initMap() {
 }
 
 function callback(results, status) {
+  console.log(results);
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
+    results.forEach(function(result) {
+      createMarker(result);
+    });
   }
 }
 
 function createMarker(place) {
-  var placeLoc = place.geometry.location;
+  var placeLocation = place.geometry.location;
+  var icon = {
+    url: '../assets/images/map-pointer.svg', // url
+    scaledSize: new google.maps.Size(25, 25), // scaled size
+    origin: new google.maps.Point(0, 0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+  };
   var marker = new google.maps.Marker({
     map: map,
-    position: place.geometry.location
+    position: placeLocation,
+    icon,
   });
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -74,13 +83,14 @@ $(document).ready(function() {
   // Cargando restaurantes según data
   function displayRestaurants() {
     $.each(restaurants, function(i) {
-      var restThumb = `<li class="collection col-xs-6 col-sm-4 col-md-3"><a id="${restaurants[i]}" href="#" data-toggle="modal" data-target="#infoModal">
-                        <span class="caption">
-                          <span>${data[restaurants[i]].name}</span>
-                          <img class="center-block" src="../assets/images/cutlery.svg" alt="Info">
-                          </span>
-                        </a>
-                      </li>`;
+      var restThumb = `
+        <li class="collection col-xs-6 col-sm-4 col-md-3"><a id="${restaurants[i]}" href="#" data-toggle="modal" data-target="#infoModal">
+          <span class="caption">
+            <span>${data[restaurants[i]].name}</span>
+            <img class="center-block" src="../assets/images/cutlery.svg" alt="Info">
+            </span>
+          </a>
+        </li>`;
       $('#results .row ul').append(restThumb);
       $('#' + restaurants[i]).css({
         'background-image': 'url(' + data[restaurants[i]].image + ')'});
@@ -114,7 +124,7 @@ $(document).ready(function() {
   // Completar info en Modal
   function fillModal() {
     $('.modal-title').text(data[$(this).parent().attr('id')].name);
-    var url = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyCT2GpxF7X_3dlLQVdNOqmzlHBaJVHXwwA&q=' + (data[$(this).parent().attr('id')].address).split(' ').join('+');
+    var url = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${(data[$(this).parent().attr('id')].address).split(' ').join('+')}`;
     $('.modal-body iframe').attr('src', url);
     $('.address').text(data[$(this).parent().attr('id')].address);
     $('.price').text(data[$(this).parent().attr('id')].price);
