@@ -1,6 +1,5 @@
 var map;
 var infowindow;
-var API_KEY = 'AIzaSyBhRiTqDw5gWOpEZU3xrQs5NvM0pfct6Wk';
 
 function initMap() {
   // Try HTML5 geolocation.
